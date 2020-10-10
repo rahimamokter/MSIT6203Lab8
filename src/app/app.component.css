@@ -1,0 +1,26 @@
+.buttontype {
+    background-color: #5DADE2;     
+    color: black;  
+    font-size: 17px; 
+    font-weight: bold;
+    font-family: "The New Roman";
+    padding: 14px 20px;   
+    border: none;  
+    cursor: pointer;
+    width: 300px;  
+    }   
+
+.goodscore {
+    color: red;
+    font-family: "The New Roman";
+}
+
+.passedscore {
+    color: red;
+    font-family: "The New Roman";
+}
+
+.failedstyle {
+    color: red;
+    font-family: "The New Roman";
+}
