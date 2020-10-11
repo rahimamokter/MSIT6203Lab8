@@ -1,24 +1,20 @@
 import { Directive, Input, OnChanges, HostBinding } from '@angular/core';
 
 @Directive({
-  selector: '[appCardlogo]',
+  selector: '[creditCardLogo]',
   
 })
-export class CardlogoDirective implements OnChanges {
+export class CreditCardDirective implements OnChanges {
   //cardType: string = "";
  
   constructor() { }
 
   @Input() cardNumber: string;
   @Input() cardType: string;
-  
   @HostBinding('src') imageSource;
   
 ngOnChanges() {
-  
-  this.imageSource = './assets/default.jpg';
-
- 
+   
   if(this.cardNumber.startsWith("34")) {
     this.imageSource = './assets/amex.jpg';
     this.cardType = "Amex";
