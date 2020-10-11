@@ -1,14 +1,15 @@
-<!--****** Question 1 ******-->
+<!-- Q-1 -->
+
 <div style= "text-align: center">
 <h1>
-Letter grade based on IT6203 class grading policy {{title}}
+Letter grade based on IT6203 class grading policy {{appTitle}}
 </h1><br/>
 </div>
 
 <button class= "buttontype" mat-raised-button (click)="generateRandom()">
-Click to generate random number
+Click here to generate a random number
 </button>  
-<br />
+<br>
 
 <!-- * using strong command to display a positive integer *-->
 <p>
@@ -38,19 +39,30 @@ Click to generate random number
 
 </div>
 
-<!--****** Question 2 ******-->
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+
+<!--Q-2 -->
 
 <div style= "text-align: center">
-    <h1>
-    Display credit card logo based on the credit card number {{title}}
-    </h1><br/>
+    <h1> Displays credit card logo based on the credit card's starting number {{appTitle}}
+    </h1>
+    <br/>
 </div>
 
-<input
-  type="text"
-  [(ngModel)]="cardNumberInput"
-/>
+<input type="text" [(ngModel)]="cardNumberInput" />
 
 <p>Entered card number: {{ cardNumberInput }}</p>
+
+
 <img appCardlogo [cardNumber]="cardNumberInput" width="300" />
+<p>Card Type: {{ cardType }}</p>
+
+    
 <router-outlet></router-outlet>

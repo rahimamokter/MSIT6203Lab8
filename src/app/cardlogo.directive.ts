@@ -1,46 +1,49 @@
 import { Directive, Input, OnChanges, HostBinding } from '@angular/core';
 
 @Directive({
-  selector: '[appCardlogo]'
+  selector: '[appCardlogo]',
+  
 })
 export class CardlogoDirective implements OnChanges {
-  cardName: string = "Discover";
-
+  cardType: string = "Discover";
+ 
 ngOnChanges() {
-  const cardNoVISA = "4";
-  const cardNoMaster = "5";
-  const cardNoDiners = "30";
-  const cardNoAmex = "34";
-  const cardNoDiscover = "60";
+  
+  this.imageSource = './assets/default.JPG';
 
-  this.imageSource = './assets/visa.JPG';
-  if(this.cardNumber.startsWith(cardNoVISA)) {
-    this.imageSource = './assets/visa.JPG';
-    this.cardName = "VISA";
+  if(this.cardNumber.startsWith("34")) {
+    this.imageSource = './assets/amex.JPG';
+    this.cardType = "Amex";
+  }
+  
+  else if(this.cardNumber.startsWith("30")) {
+    this.imageSource = './assets/diners.JPG';
+    this.cardType = "Diners";
   }
 
-  if(this.cardNumber.startsWith(cardNoMaster)) {
-    this.imageSource = './assets/mastercard.JPG';
-    this.cardName = "Mastercard";
-  }
-
-  if(this.cardNumber.startsWith(cardNoDiscover)) {
-    this.imageSource = './assets/discover.JPG';
-    this.cardName = "Discover";
-  }
-
-  if(this.cardNumber.startsWith(cardNoDiners)) {
-  this.imageSource = './assets/diners.JPG';
-  this.cardName = "Diners";
-  }
-
-  if(this.cardNumber.startsWith(cardNoAmex)) {
-  this.imageSource = './assets/amex.JPG';
-  this.cardName = "Amex";
-  }
-
+  else if(this.cardNumber.startsWith("60")) {
+      this.imageSource = './assets/discover.JPG';
+      this.cardType = "DISCOVER";
+    }
+    
+    else if(this.cardNumber.startsWith("5")) {
+      this.imageSource = './assets/mastercard.JPG';
+      this.cardType = "MASTERCARD";
+    }
+    
+    else if(this.cardNumber.startsWith("4")) {
+      this.imageSource = './assets/visa.JPG';
+      this.cardType = "VISA";
+    }
+    
+   
+  
 }
+
 constructor() { }
+
   @Input() cardNumber: string;
+  //@Input() cardType: string;
+  
   @HostBinding('src') imageSource;
 }
